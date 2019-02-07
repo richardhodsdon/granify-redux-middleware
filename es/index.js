@@ -17,7 +17,7 @@ var granifyMiddleware = function granifyMiddleware(store) {
           warningShown = true;
 
           /* eslint-disable */
-          console.warn('Please ensure the latest version of Granify is running. Contact support for more information');
+          console.warn('Granify Redux Middleware: Please ensure the latest version of Granify is running. Contact support for more information');
           /* eslint-enable */
         }
 

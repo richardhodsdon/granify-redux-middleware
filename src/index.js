@@ -16,7 +16,7 @@ const granifyMiddleware = store => next => action => {
 
       /* eslint-disable */
       console.warn(
-        'Please ensure the latest version of Granify is running. Contact support for more information'
+        'Granify Redux Middleware: Please ensure the latest version of Granify is running. Contact support for more information'
       );
       /* eslint-enable */
     }
