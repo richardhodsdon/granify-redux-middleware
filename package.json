@@ -1,6 +1,6 @@
 {
   "name": "granify-redux-middleware",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Apache-2.0",
   "description": "Granify middleware for Redux.",
   "repository": "github:reduxjs/redux-thunk",
@@ -14,19 +14,17 @@
   "author": "Granify Developers <developer@granify.com>",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "typings": "./index.d.ts",
   "files": [
     "lib",
     "es",
     "src",
-    "dist",
-    "index.d.ts"
+    "dist"
   ],
   "scripts": {
     "clean": "rimraf lib dist es",
     "prepare": "npm run clean && npm run lint && npm run test && npm run build",
     "lint": "eslint src test",
-    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec test/*.js",
+    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec test/*.js -r jsdom-global/register",
     "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min && npm run build:es",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
@@ -59,15 +57,16 @@
     "babel-plugin-transform-es3-member-expression-literals": "^6.5.0",
     "babel-plugin-transform-es3-property-literals": "^6.5.0",
     "chai": "^3.2.0",
+    "chai-spies": "^1.0.0",
     "cross-env": "^1.0.7",
     "eslint": "^1.10.2",
     "eslint-config-airbnb": "1.0.2",
     "eslint-plugin-react": "^4.1.0",
+    "jsdom": "13.2.0",
+    "jsdom-global": "3.0.2",
     "mocha": "^2.2.5",
     "redux": "~4.0.0",
     "rimraf": "^2.5.2",
-    "typescript": "~2.6.2",
-    "typings-tester": "^0.3.1",
     "webpack": "^1.12.14"
   }
 }
